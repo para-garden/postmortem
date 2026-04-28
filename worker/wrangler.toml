@@ -1,0 +1,8 @@
+name = "postmortem-router"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+routes = [
+  { pattern = "para.garden/postmortem", zone_name = "para.garden" },
+  { pattern = "para.garden/postmortem/*", zone_name = "para.garden" },
+]

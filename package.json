@@ -1,0 +1,30 @@
+{
+  "name": "postmortem",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/cli.ts dev",
+    "build": "bun run src/cli.ts build",
+    "inspect": "bun run src/cli.ts inspect",
+    "preview": "bun run src/cli.ts dev --production",
+    "lint": "oxlint src/",
+    "check:types": "tsgo --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.0",
+    "@typescript/native-preview": "^7.0.0-dev",
+    "oxlint": "^1.0.0"
+  },
+  "dependencies": {
+    "keybinds": "github:pterror/keybinds",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "yaml": "^2.8.2"
+  }
+}

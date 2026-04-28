@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Environment
+.env
+.env.local
+.envrc.local
+
+# direnv
+.direnv/
+
+# Nix
+result
+
+# Generated (regenerated on build)
+src/generated-edges.ts
+src/generated-graph.ts
+src/generated-groupings.ts
+public/headings.json
+
+# Editor
+.vscode/
+*.swp
