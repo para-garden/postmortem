@@ -46,7 +46,7 @@ Key configuration:
 - Site config: `name: "postmortem"`, `domain: "para.garden"`, `basePath: "/postmortem"`, `metaNodeId: "meta/postmortem"`
 - World content in `public/content/world/`
 - Worker route currently mirrors divergence (`para.garden/postmortem`); confirm at deploy time.
-- `worker/src/index.js` PAGES_ORIGIN still says `postmortem-5ax.pages.dev` — placeholder until the actual Cloudflare Pages project exists.
+- `worker/src/index.js` PAGES_ORIGIN: `postmortem-boz.pages.dev`
 
 ## Commands
 

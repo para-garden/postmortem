@@ -4,7 +4,7 @@
 
 - [x] **Initial scaffold** — repo forked from divergence
 - [ ] **Cluster configs** — define initial clusters once content shape emerges
-- [ ] **Cloudflare Pages project** — create `postmortem-*.pages.dev`, update `worker/src/index.js` PAGES_ORIGIN
+- [x] **Cloudflare Pages project** — `postmortem-boz.pages.dev`
 - [ ] **GitHub repo** — create para-garden/postmortem, push
 - [ ] **Worker route** — currently set to `para.garden/postmortem` mirroring divergence; confirm or change
 

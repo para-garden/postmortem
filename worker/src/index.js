@@ -1,4 +1,4 @@
-const PAGES_ORIGIN = "https://postmortem-5ax.pages.dev";
+const PAGES_ORIGIN = "https://postmortem-boz.pages.dev";
 
 export default {
   async fetch(request) {
