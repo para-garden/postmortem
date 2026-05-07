@@ -1,8 +1,12 @@
 ---
 label: the wind
-description: the only sound you can hear is the wind.
+description: a curtain in an open window.
 tags: [world]
 collections: [default]
 ---
 
-The only sound you can hear is the wind.
+A curtain moves in an open window.
+
+A piece of paper turns over in the doorway.
+
+The leaves on the tree by the road do what leaves do.

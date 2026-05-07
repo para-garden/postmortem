@@ -1,11 +1,11 @@
 ---
 label: the ski lift
-description: empty chairs over the slope, around the bullwheel, back down.
+description: chairs over the slope.
 tags: [world]
 collections: [default]
 ---
 
-Empty chairs over the slope.
+The chairs go over the slope.
 
 Around the bullwheel.
 
