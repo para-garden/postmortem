@@ -130,4 +130,3 @@ When suggesting multiple options for content direction: add all of them to TODO.
 - Don't hardcode content-specific values in build tools (inherited from ptera.world)
 - Don't add ptera.world-specific content directories
 - No reflective/analytical writing in this repo — that's ptera.world's job
-- Do not use Claude Code's auto-memory system (`~/.claude/projects/.../memory/`) — write behavioral changes and project context directly to CLAUDE.md instead
