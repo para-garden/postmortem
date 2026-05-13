@@ -48,7 +48,7 @@ Key configuration:
 - Worker route currently mirrors divergence (`para.garden/postmortem`); confirm at deploy time.
 - `worker/src/index.js` PAGES_ORIGIN: `postmortem-boz.pages.dev`
 
-## Commands
+## Development
 
 ```bash
 bun install
@@ -111,20 +111,45 @@ para-garden / paragarden (`~/git/paragarden/`). GitHub org: para-garden.
 
 When suggesting multiple options for content direction: add all of them to TODO.md before continuing. The user picks one; alternatives shouldn't be lost.
 
-## Core Rules
+## Context Is The Only Scarce Resource
 
-**Note things down immediately — no deferral:**
-- Problems, tech debt, issues → TODO.md now, in the same response
-- Design decisions, key insights → CLAUDE.md
-- Future/deferred scope → TODO.md **before** writing any code, not after
+Every byte that enters the main session stays in the main session for its entire lifetime. File contents, command output, search results, page text — once read, it lingers in cache and shapes every downstream token. There is no "just looking."
 
-**Conversation is not memory.** Anything said in chat evaporates at session end. If it implies a future behavior change, write it to CLAUDE.md immediately — or it will not happen.
+**All exploration runs in subagents.** Investigations, audits, deep dives, surveys, "let me check," "let me find" — if the purpose of a tool sequence is to find out something you don't yet know, it runs in a subagent. Renaming the activity does not change what it is. The subagent returns a distilled summary; the raw output stays in the subagent.
 
-**When the user corrects you:** Ask what rule would have prevented this, and write it before proceeding. **"The rule exists, I just didn't follow it" is never the diagnosis** — a rule that doesn't prevent the failure it describes is incomplete; fix the rule, not your behavior.
+The main session holds only the durable artifacts you are producing: the edit, the commit, the doc update.
+
+**Subagent model tiers:**
+- Opus — design, architecture, any subagent that itself spawns subagents.
+- Sonnet — implementation, mechanical multi-file work, default exploration.
+
+## Durability
+
+Subagent reports, mid-session realizations, "I'll remember this" — none of these outlast the session. Anything worth keeping goes into CLAUDE.md, code, docs, or a commit. If it isn't written down, it is gone.
+
+**Commit completed work immediately.** After each phase of a multi-phase plan, commit. Uncommitted work is lost work.
+
+**Docs change in the same commit as the code.** New pages enter the sidebar in that commit. There is no follow-up.
+
+**Problems, tech debt, issues → TODO.md now, in the same response.** Future/deferred scope goes in TODO.md before writing any content, not after.
+
+## Authenticity
+
+When asked to analyze X, read X. Do not synthesize from conversation memory, prior summaries, or what the file probably says. Claims must correspond to evidence produced this session.
+
+**Something unexpected is a signal.** Surprising output, anomalous numbers, a file containing what it shouldn't — stop and find out why. Do not accept the anomaly and proceed.
 
 **Stop inventing constraints.** When fleshing out the world or writing entries, do not invent rules ("must stay specific," "must avoid sweep," "must use X form") and then defend them. Describe what's there. The premise is simple; the project does not need additional rails. If a rule isn't already in this file, don't invent it mid-response.
 
-## Negative Constraints
+## Discipline
+
+**When the user corrects you:** Ask what rule would have prevented this, and write it before proceeding. "The rule exists, I just didn't follow it" is never the diagnosis — a rule that doesn't prevent the failure it describes is incomplete; fix the rule, not your behavior.
+
+Rules are added when a failure mode is observed and the rule names the failure it prevents. Single one-off corrections that don't reveal a pattern don't need rules.
+
+Do not announce actions ("I will now…"). Act.
+
+## Hard Constraints
 
 - No Rust in this repo — TypeScript/web project
 - Don't hardcode content-specific values in build tools (inherited from ptera.world)
