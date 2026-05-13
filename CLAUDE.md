@@ -143,9 +143,7 @@ When asked to analyze X, read X. Do not synthesize from conversation memory, pri
 
 ## Discipline
 
-**When the user corrects you:** Ask what rule would have prevented this, and write it before proceeding. "The rule exists, I just didn't follow it" is never the diagnosis — a rule that doesn't prevent the failure it describes is incomplete; fix the rule, not your behavior.
-
-Rules are added when a failure mode is observed and the rule names the failure it prevents. Single one-off corrections that don't reveal a pattern don't need rules.
+Rules are added when a failure mode is observed and the rule names the failure it prevents. Single corrections are conversation, not material for new rules.
 
 Do not announce actions ("I will now…"). Act.
 
