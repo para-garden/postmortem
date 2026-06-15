@@ -24,3 +24,8 @@ public/headings.json
 # Editor
 .vscode/
 *.swp
+
+# Normalize
+.normalize/*
+!.normalize/config.toml
+!.normalize/memory/
